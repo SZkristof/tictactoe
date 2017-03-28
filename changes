@@ -1,1 +1,16 @@
-ASDF
+Specification - TicTacToe Game Improvement
+
+Modifications:
+
+Color simplicity
+print_Table to dictionary
+ascii art improvement -pl.:  organising them in functions
+
+Improvements/extras:
+
++ highscore with dates
++ Do you want to play again? Press ... to continue
++ Player names
++ pep8 clean code
++ functions in a new, seperate .py file
+++ AI - if there is enough time ++
