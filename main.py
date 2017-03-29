@@ -1,48 +1,52 @@
 import mainfunc
-import smalls
-from printboard import drawBoard
+from design import *
 
-while True:
 
-    #smalls.front_line()
-    theBoard = [' '] * 10
-    turn = mainfunc.whoGoesFirst()
-    playerLetter, player2Letter = mainfunc.inputPlayerLetter()
-    print('The ' + turn + ' will go first.')
-    gameIsPlaying = True
+def main():
 
-    while gameIsPlaying:
+    while True:
 
-        if turn == "player1":
-            drawBoard(theBoard)
-            move = mainfunc.getPlayerMove(theBoard)
-            mainfunc.makeMove(theBoard, playerLetter, move)
+        front_line()
+        theBoard = [' '] * 10
+        turn = mainfunc.whoGoesFirst()
+        playerLetter, player2Letter = mainfunc.inputPlayerLetter()
+        print('The ' + turn + ' will go first.')
+        gameIsPlaying = True
 
-            if mainfunc.isWinner(theBoard, playerLetter):
+        while gameIsPlaying:
+
+            if turn == "player1":
                 drawBoard(theBoard)
-                smalls.victory()
-                gameIsPlaying = False
-            else:
-                if mainfunc.isBoardFull(theBoard):
-                    drawBoard(theBoard)
-                    print('The game is a tie!')
-                    break
-                else:
-                    turn = 'player2'
-        else:
-            drawBoard(theBoard)
-            move = mainfunc.getPlayerMove(theBoard)
-            mainfunc.makeMove(theBoard, player2Letter, move)
+                move = mainfunc.getPlayerMove(theBoard)
+                mainfunc.makeMove(theBoard, playerLetter, move)
 
-            if mainfunc.isWinner(theBoard, player2Letter):
+                if mainfunc.isWinner(theBoard, playerLetter):
+                    drawBoard(theBoard)
+                    victory()
+                    gameIsPlaying = False
+                else:
+                    if mainfunc.isBoardFull(theBoard):
+                        drawBoard(theBoard)
+                        print('The game is a tie!')
+                        break
+                    else:
+                        turn = 'player2'
+            else:
                 drawBoard(theBoard)
-                smalls.victory()
-                gameIsPlaying = False
-            else:
-                if mainfunc.isBoardFull(theBoard):
-                    drawBoard(theBoard)
-                    print('The game is a tie!')
-                    break
-                else:
-                    turn = 'player1'
+                move = mainfunc.getPlayerMove(theBoard)
+                mainfunc.makeMove(theBoard, player2Letter, move)
 
+                if mainfunc.isWinner(theBoard, player2Letter):
+                    drawBoard(theBoard)
+                    victory()
+                    gameIsPlaying = False
+                else:
+                    if mainfunc.isBoardFull(theBoard):
+                        drawBoard(theBoard)
+                        print('The game is a tie!')
+                        break
+                    else:
+                        turn = 'player1'
+
+if __name__ == "__main__":
+    main()

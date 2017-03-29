@@ -1,10 +1,9 @@
 import random
 import time
 import sys
-from random import uniform
 import colours
-from printboard import drawBoard
-import smalls
+from random import uniform
+from design import *
 
 
 def name_player1():
@@ -66,7 +65,7 @@ def isWinner(bo, le):
 def getPlayerMove(board):
     move = ' '
     while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
-        smalls.your_move()
+        your_move()
         move = input()
     return int(move)
 
