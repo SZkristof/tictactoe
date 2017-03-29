@@ -7,15 +7,29 @@ from design import *
 
 
 def name_player1():
+    global player1
     player1 = input("Player 1 enter your name (max 10 characters): ")
-    if len(player1) <= 10:
-        return player1
+    try:
+        if len(player1) <= 10:
+            return player1
+        else:
+            raise ValueError
+    except ValueError:
+        print("Invalid name format, please try again.")
+        name_player1()
 
 
 def name_player2():
+    global player2
     player2 = input("Player 2 enter your name (max 10 characters): ")
-    if len(player2) <= 10:
-        return player2
+    try:
+        if len(player2) <= 10:
+            return player2
+        else:
+            raise ValueError
+    except ValueError:
+        print("Invalid name format, please try again.")
+        name_player2()
 
 
 def inputPlayerLetter():
@@ -23,7 +37,7 @@ def inputPlayerLetter():
     name_player2()
     letter = ''
     while not (letter == 'X' or letter == 'O'):
-        print(yellow + player1 + ' ,do you want to be X or O?')
+        print(yellow + ', do you want to be X or O?')
         letter = input().upper()
     if letter == 'X':
         return [blue + 'X',  red + 'O']
