@@ -3,7 +3,7 @@ import colours
 
 
 def drawBoard(board):
-    
+
     os.system('clear')
 
     print(colours.yellow + '│¯¯¯¯¯││¯¯¯¯¯││¯¯¯¯¯│')
