@@ -3,32 +3,14 @@ import time
 import sys
 from random import uniform
 import colours
-
-
-def drawBoard(board):
-
-    import os
-    os.system('clear')
-
-    print(colours.yellow + '│¯¯¯¯¯││¯¯¯¯¯││¯¯¯¯¯│')
-    print(colours.yellow + '│  ' + board[7] + colours.yellow + '  ││  '  + board[8] + colours.yellow + '  ││  ' + board[9] + colours.yellow + '  │')
-    print(colours.yellow + '│_____││_____││_____│')
-
-    print(colours.yellow + '│¯¯¯¯¯││¯¯¯¯¯││¯¯¯¯¯│')
-    print(colours.yellow + '│  ' + board[4] + colours.yellow + '  ││  '  + board[5] + colours.yellow + '  ││  ' + board[6]+ colours.yellow + '  │')
-    print(colours.yellow + '│_____││_____││_____│')
-
-    print(colours.yellow + '│¯¯¯¯¯││¯¯¯¯¯││¯¯¯¯¯│')
-    print(colours.yellow + '│  ' + board[1] + colours.yellow + '  ││  '  + board[2] + colours.yellow + '  ││  ' + board[3]+ colours.yellow + '  │')
-    print(colours.yellow + '│     ││     ││     │')
-    print(colours.yellow + ' ¯¯¯¯¯  ¯¯¯¯¯  ¯¯¯¯¯ ')
+from printboard import drawBoard
 
 
 def inputPlayerLetter():
 
     letter = ''
     while not (letter == 'X' or letter == 'O'):
-        print('colours.yellow + ⓨⓞⓤ ⓦⓘⓛⓛ ⓑⓔ ⓟⓛⓐⓨⓔⓡ ⓞⓝⓔ. ⓓⓞ ⓨⓞⓤ ⓦⓐⓝⓣ ⓣⓞ ⓑⓔ │ⓧ│ ⓞⓡ │ⓩ│?')
+        print(colours.yellow + 'Do you want to be X or O?')
         letter = input().upper()
     if letter == 'X':
         return ['\033[1;34mX', '\033[1;31mO']
@@ -70,19 +52,9 @@ def isWinner(bo, le):
 def getPlayerMove(board):
     move = ' '
     while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
-        print('colours.yellow +                ___       __          __        __           ___     ___           __        ___ __ ')
-        print('colours.yellow + |  | |__|  /\   |     | /__`    \ / /  \ |  | |__)    |\ | |__  \_/  |      |\/| /  \ \  / |__   _|')
-        print('colours.yellow + |/\| |  | /~~\  |     | .__/     |  \__/ \__/ |  \    | \| |___ / \  |      |  | \__/  \/  |___  . ')
-        move = input()
-    return int(move)
-
-
-def getPlayer2Move(board):
-    move = ' '
-    while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
-        print('colours.yellow +                ___       __          __        __           ___     ___           __        ___ __ ')
-        print('colours.yellow + |  | |__|  /\   |     | /__`    \ / /  \ |  | |__)    |\ | |__  \_/  |      |\/| /  \ \  / |__   _|')
-        print('colours.yellow + |/\| |  | /~~\  |     | .__/     |  \__/ \__/ |  \    | \| |___ / \  |      |  | \__/  \/  |___  . ')
+        print(colours.yellow + '                ___       __          __        __           ___     ___           __        ___ __ ')
+        print(' |  | |__|  /\   |     | /__`    \ / /  \ |  | |__)    |\ | |__  \_/  |      |\/| /  \ \  / |__   _|')
+        print(' |/\| |  | /~~\  |     | .__/     |  \__/ \__/ |  \    | \| |___ / \  |      |  | \__/  \/  |___  . ' + colours.colour_end)
         move = input()
     return int(move)
 
