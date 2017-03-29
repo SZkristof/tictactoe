@@ -1,5 +1,7 @@
-import mainfunc
 from design import *
+from inputs import *
+from mainfunc import *
+from colours import *
 
 
 def main():
@@ -8,24 +10,23 @@ def main():
 
         front_line()
         theBoard = [' '] * 10
-        turn = mainfunc.whoGoesFirst()
-        playerLetter, player2Letter = mainfunc.inputPlayerLetter()
-        print('The ' + turn + ' will go first.')
+        turn = whoGoesFirst()
+        playerLetter, player2Letter = inputPlayerLetter()
         gameIsPlaying = True
 
         while gameIsPlaying:
 
             if turn == "player1":
                 drawBoard(theBoard)
-                move = mainfunc.getPlayerMove(theBoard)
-                mainfunc.makeMove(theBoard, playerLetter, move)
+                move = getPlayerMove(theBoard)
+                makeMove(theBoard, playerLetter, move)
 
-                if mainfunc.isWinner(theBoard, playerLetter):
+                if isWinner(theBoard, playerLetter):
                     drawBoard(theBoard)
                     victory()
                     gameIsPlaying = False
                 else:
-                    if mainfunc.isBoardFull(theBoard):
+                    if isBoardFull(theBoard):
                         drawBoard(theBoard)
                         print('The game is a tie!')
                         break
@@ -33,15 +34,15 @@ def main():
                         turn = 'player2'
             else:
                 drawBoard(theBoard)
-                move = mainfunc.getPlayerMove(theBoard)
-                mainfunc.makeMove(theBoard, player2Letter, move)
+                move = getPlayerMove(theBoard)
+                makeMove(theBoard, player2Letter, move)
 
-                if mainfunc.isWinner(theBoard, player2Letter):
+                if isWinner(theBoard, player2Letter):
                     drawBoard(theBoard)
                     victory()
                     gameIsPlaying = False
                 else:
-                    if mainfunc.isBoardFull(theBoard):
+                    if isBoardFull(theBoard):
                         drawBoard(theBoard)
                         print('The game is a tie!')
                         break
