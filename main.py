@@ -53,9 +53,7 @@ def isWinner(bo, le):
 def getPlayerMove(board):
     move = ' '
     while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
-        print(colours.yellow + '                ___       __          __        __           ___     ___           __        ___ __ ')
-        print(' |  | |__|  /\   |     | /__`    \ / /  \ |  | |__)    |\ | |__  \_/  |      |\/| /  \ \  / |__   _|')
-        print(' |/\| |  | /~~\  |     | .__/     |  \__/ \__/ |  \    | \| |___ / \  |      |  | \__/  \/  |___  . ' + colours.colour_end)
+        smalls.your_move()
         move = input()
     return int(move)
 
