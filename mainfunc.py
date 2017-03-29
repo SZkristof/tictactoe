@@ -7,11 +7,24 @@ from printboard import drawBoard
 import smalls
 
 
-def inputPlayerLetter():
+def name_player1():
+    player1 = input("Player 1 enter your name (max 10 characters): ")
+    if len(player1) <= 10:
+        return player1
 
+
+def name_player2():
+    player2 = input("Player 2 enter your name (max 10 characters): ")
+    if len(player2) <= 10:
+        return player2
+
+
+def inputPlayerLetter():
+    player1 = name_player1()
+    name_player2()
     letter = ''
     while not (letter == 'X' or letter == 'O'):
-        print(colours.yellow + 'Do you want to be X or O?')
+        print(colours.yellow + player1 + ' ,do you want to be X or O?')
         letter = input().upper()
     if letter == 'X':
         return [colours.blue + 'X', colours.red + 'O']

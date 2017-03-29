@@ -4,10 +4,10 @@ from printboard import drawBoard
 
 while True:
 
-    smalls.front_line()
+    #smalls.front_line()
     theBoard = [' '] * 10
-    playerLetter, player2Letter = mainfunc.inputPlayerLetter()
     turn = mainfunc.whoGoesFirst()
+    playerLetter, player2Letter = mainfunc.inputPlayerLetter()
     print('The ' + turn + ' will go first.')
     gameIsPlaying = True
 
@@ -45,3 +45,4 @@ while True:
                     break
                 else:
                     turn = 'player1'
+
