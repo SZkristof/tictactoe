@@ -71,6 +71,7 @@ def isBoardFull(board):
     return True
 
 while True:
+
     smalls.front_line()
     theBoard = [' '] * 10
     playerLetter, player2Letter = inputPlayerLetter()
@@ -79,6 +80,7 @@ while True:
     gameIsPlaying = True
 
     while gameIsPlaying:
+
         if turn == "player1":
             drawBoard(theBoard)
             move = getPlayerMove(theBoard)
@@ -95,7 +97,6 @@ while True:
                     break
                 else:
                     turn = 'player2'
-
         else:
             drawBoard(theBoard)
             move = getPlayerMove(theBoard)
