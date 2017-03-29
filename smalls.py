@@ -56,3 +56,9 @@ def victory():
     print('   ╚═══╝  ╚═╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝   ╚═╝ ' + colours.colour_end)
     print("\n"*3)
     time.sleep(1.5)
+
+
+def your_move():
+    print(colours.yellow + '                ___       __          __        __           ___     ___           __        ___ __ ')
+    print(' |  | |__|  /\   |     | /__`    \ / /  \ |  | |__)    |\ | |__  \_/  |      |\/| /  \ \  / |__   _|')
+    print(' |/\| |  | /~~\  |     | .__/     |  \__/ \__/ |  \    | \| |___ / \  |      |  | \__/  \/  |___  . ' + colours.colour_end)
