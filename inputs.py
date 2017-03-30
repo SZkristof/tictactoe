@@ -8,27 +8,27 @@ from design import *
 
 def name_player1():
     global player1
-    player1 = input("Player 1 enter your name (max 10 characters): ")
+    player1 = input(yellow + "Player 1 enter your name (max 10 characters): " + colour_end)
     try:
         if len(player1) <= 10:
             return player1
         else:
             raise ValueError
     except ValueError:
-        print("Invalid name format, please try again.")
+        print(yellow + "Invalid name format, please try again." + colour_end)
         name_player1()
 
 
 def name_player2():
     global player2
-    player2 = input("Player 2 enter your name (max 10 characters): ")
+    player2 = input(yellow + "Player 2 enter your name (max 10 characters): " + colour_end)
     try:
         if len(player2) <= 10:
             return player2
         else:
             raise ValueError
     except ValueError:
-        print("Invalid name format, please try again.")
+        print(yellow + "Invalid name format, please try again." + colour_end)
         name_player2()
 
 
