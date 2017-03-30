@@ -2,13 +2,14 @@ from design import *
 from inputs import *
 from mainfunc import *
 from colours import *
+from start import *
 
 
 def main():
 
     while True:
 
-        front_line()
+        start_game()
         theBoard = [' '] * 10
         playerLetter, player2Letter = inputPlayerLetter()
         turn = whoGoesFirst()
