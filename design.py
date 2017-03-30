@@ -68,7 +68,7 @@ def front_line():
 
 
 def victory():
-    print(colours.yellow +' ██╗   ██╗██╗ ██████╗████████╗ ██████╗ ██████╗ ██╗   ██╗')
+    print(colours.yellow + ' ██╗   ██╗██╗ ██████╗████████╗ ██████╗ ██████╗ ██╗   ██╗')
     print(' ██║   ██║██║██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗╚██╗ ██╔╝')
     print(' ██║   ██║██║██║        ██║   ██║   ██║██████╔╝ ╚████╔╝')
     print(' ╚██╗ ██╔╝██║██║        ██║   ██║   ██║██╔══██╗  ╚██╔╝ ')
@@ -79,6 +79,4 @@ def victory():
 
 
 def your_move():
-    print(colours.yellow + '                ___       __          __        __           ___     ___           __        ___ __ ')
-    print(' |  | |__|  /\   |     | /__`    \ / /  \ |  | |__)    |\ | |__  \_/  |      |\/| /  \ \  / |__   _|')
-    print(' |/\| |  | /~~\  |     | .__/     |  \__/ \__/ |  \    | \| |___ / \  |      |  | \__/  \/  |___  . ' + colours.colour_end)
+    print(colours.yellow + 'What is your next move?' + colours.colour_end)
