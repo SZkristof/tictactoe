@@ -1,16 +1,5 @@
-import random
-import time
-import sys
-from random import uniform
 from design import *
 from inputs import *
-
-
-def whoGoesFirst():
-    if random.randint(0, 1) == 0:
-        return 'player1'
-    else:
-        return 'player2'
 
 
 def isWinner(bo, le):

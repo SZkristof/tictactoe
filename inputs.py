@@ -6,6 +6,31 @@ from random import uniform
 from design import *
 
 
+def victory():
+    print(str(player1) + " has won the game!")
+    time.sleep(1.5)
+
+
+def victory2():
+    print (str(player2) + " has won the game!")
+    time.sleep(1.5)
+
+
+def your_move():
+    print(colours.yellow + 'What is your next move?' + colours.colour_end)
+
+
+def whoGoesFirst():
+    if random.randint(0, 1) == 0:
+        print (str(player1) + ' comes first..')
+        time.sleep(2)
+        return 'player1'
+    else:
+        print (str(player2) + ' comes first..')
+        time.sleep(2)
+        return 'player2'
+
+
 def name_player1():
     global player1
     player1 = input(yellow + "Player 1 enter your name (max 10 characters): " + colour_end)
@@ -34,10 +59,10 @@ def name_player2():
 
 def inputPlayerLetter():
     player1 = name_player1()
-    name_player2()
+    player2 = name_player2()
     letter = ''
     while not (letter == 'X' or letter == 'O'):
-        print(yellow + ', do you want to be X or O?')
+        print(yellow + str(player1) + ', do you want to be X or O?')
         letter = input().upper()
     if letter == 'X':
         return [blue + 'X',  red + 'O']

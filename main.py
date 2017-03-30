@@ -10,8 +10,8 @@ def main():
 
         front_line()
         theBoard = [' '] * 10
-        turn = whoGoesFirst()
         playerLetter, player2Letter = inputPlayerLetter()
+        turn = whoGoesFirst()
         gameIsPlaying = True
 
         while gameIsPlaying:
@@ -39,7 +39,7 @@ def main():
 
                 if isWinner(theBoard, player2Letter):
                     drawBoard(theBoard)
-                    victory()
+                    victory2()
                     gameIsPlaying = False
                 else:
                     if isBoardFull(theBoard):
