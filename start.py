@@ -20,14 +20,12 @@ def start_game():
     front_line()
     start()
     try:
-
         if start() == "START":
             None
         elif start() == "start":
             None
         else:
             raise ValueError
-
     except ValueError:
         start()
 
