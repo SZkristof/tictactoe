@@ -7,12 +7,12 @@ from design import *
 
 
 def victory():
-    print(str(player1) + " has won the game!")
+    print(green + str(player1) + " has won the game!" + colour_end)
     time.sleep(1.5)
 
 
 def victory2():
-    print (str(player2) + " has won the game!")
+    print (green + str(player2) + " has won the game!" + colour_end)
     time.sleep(1.5)
 
 
@@ -22,11 +22,11 @@ def your_move():
 
 def whoGoesFirst():
     if random.randint(0, 1) == 0:
-        print (str(player1) + ' comes first..')
+        print (red + str(player1) + ' comes first..')
         time.sleep(2)
         return 'player1'
     else:
-        print (str(player2) + ' comes first..')
+        print (red + str(player2) + ' comes first..')
         time.sleep(2)
         return 'player2'
 
@@ -62,7 +62,7 @@ def inputPlayerLetter():
     player2 = name_player2()
     letter = ''
     while not (letter == 'X' or letter == 'O'):
-        print(yellow + str(player1) + ', do you want to be X or O?')
+        print(blue + str(player1) + ', do you want to be X or O?')
         letter = input().upper()
     if letter == 'X':
         return [blue + 'X',  red + 'O']

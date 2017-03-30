@@ -6,10 +6,6 @@ from start import *
 
 
 def main():
-    lol()
-
-
-def lol():
 
     while True:
 
@@ -18,7 +14,7 @@ def lol():
         playerLetter, player2Letter = inputPlayerLetter()
         turn = whoGoesFirst()
         gameIsPlaying = True
-        
+
         while True:
 
             while gameIsPlaying:

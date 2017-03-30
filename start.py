@@ -5,7 +5,7 @@ from sys import *
 
 
 def start():
-    start = ("Please type START to start the game: ")
+    start = (green + "Please type START to start the game: " + colour_end)
     for x in start:
         print(x, end='')
         sys.stdout.flush()
@@ -19,36 +19,23 @@ def start_game():
     print ('\nWelcome to...\n')
     front_line()
     start()
-    while start() == 'START':
-        try:
-            pass
-        except:
-            sys.exit()
+    try:
+
+        if start() == "START":
+            None
+        elif start() == "start":
+            None
+        else:
+            raise ValueError
+
+    except ValueError:
+        start()
+
     first_line = ("Loading . . . \n")
     for x in first_line:
         print(x, end='')
         sys.stdout.flush()
         time.sleep(0.1)
-
-'''
-def start_game2():
-
-    try:
-        if start() == "START":
-            first_line = ("Loading . . . \n")
-            for x in first_line:
-                print(x, end='')
-                sys.stdout.flush()
-                time.sleep(0.1)
-            user_input = input("").capitalize
-            return user_input
-        else:
-            raise ValueError
-
-    except ValueError:
-        print("Please type 'START' to start the game")
-        start_game2()
-'''
 
 
 def game_finish():
