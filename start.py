@@ -10,16 +10,27 @@ def start():
         print(x, end='')
         sys.stdout.flush()
         time.sleep(0.01)
-    user_input = input("").capitalize
+    user_input = input("")
     return user_input
 
 
 def start_game():
+
     print ('\nWelcome to...\n')
-    # front_line()
-    start_game2()
+    front_line()
+    start()
+    while start() == 'START':
+        try:
+            pass
+        except:
+            sys.exit()
+    first_line = ("Loading . . . \n")
+    for x in first_line:
+        print(x, end='')
+        sys.stdout.flush()
+        time.sleep(0.1)
 
-
+'''
 def start_game2():
 
     try:
@@ -37,6 +48,7 @@ def start_game2():
     except ValueError:
         print("Please type 'START' to start the game")
         start_game2()
+'''
 
 
 def game_finish():
