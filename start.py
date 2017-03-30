@@ -15,29 +15,30 @@ def start():
 
 
 def start_game():
-
-    print ('\nWelcome to...\n')
+    print (green + '\nWelcome to...\n' + colour_end)
     front_line()
-    start()
-    try:
-        if start() == "START":
-            None
-        elif start() == "start":
-            None
-        else:
-            raise ValueError
-    except ValueError:
-        start()
 
-    first_line = ("Loading . . . \n")
-    for x in first_line:
-        print(x, end='')
-        sys.stdout.flush()
-        time.sleep(0.1)
+    if start() == "START":
+        first_line = ("Loading . . . \n")
+        for x in first_line:
+            print(x, end='')
+            sys.stdout.flush()
+            time.sleep(0.1)
+
+    while start() != "START":
+        try:
+            raise ValueError
+
+        except ValueError:
+            if start() == "START":
+                pass
+            else:
+                start()
 
 
 def game_finish():
     userInput = input("Enter 'R' to restart or 'X' to exit.").capitalize()
+
     try:
         if userInput == "X":
             print('Goodbye.')
@@ -48,5 +49,5 @@ def game_finish():
         else:
             raise ValueError
     except ValueError:
-        print("You selected: " + userInput + "Please Choose 'R' to restart or 'X' to exit!")
+        print("You selected: " + userInput + "Please Choose 'R' to restart or 'X' to exit!: ")
         game_finish()

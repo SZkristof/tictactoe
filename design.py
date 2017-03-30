@@ -64,7 +64,7 @@ def front_line():
         sys.stdout.flush()
         time.sleep(0.005)
     time.sleep(0.2)
-    print("\n" *5)
+    print("\n" * 5)
 
 
 
